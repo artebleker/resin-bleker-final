@@ -1,0 +1,62 @@
+*{
+  margin:0px;
+  padding:0px;
+}
+body{
+  background-color:rgba(196, 27, 230, 0.273);
+
+}
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.img {
+  width: 300px;
+  /* height: 400px; */
+}
+
+.cart {
+  display: flex;
+  flex-direction: row;
+  font-weight: 500;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.item-count div button{
+    margin:14px;
+    background-color: rgb(203, 235, 241);
+    border: none;
+    font-size: 2rem;
+    font-weight: 500;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+.item-detail{
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;    
+    font-size: 1.5rem;
+}
+.item-detail img{
+    width: 600px;
+}
+.item-list-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 15px;
+    flex-wrap: wrap;
+}
+
+.item-list-container article{
+    margin:15px;
+}
