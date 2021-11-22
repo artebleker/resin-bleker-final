@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Cart from './Cart'
 import sakuraTitulo from "../../asset/sakuraTitulo.png"
 import SearchArea from './SearchArea'
+const {data} = require ('../../utils/data')
 const NavBar = () => {
     return (
         <>
@@ -16,7 +17,7 @@ const NavBar = () => {
               <Link className="nav-link active" to='/category/2'>Llaveros</Link>
               <Link className="nav-link active" to='/category/3'>Articulos</Link>
           </ul>
-          <SearchArea /> 
+          <SearchArea keywords={data.keywords}/> 
           <Cart />
               </div>  
         </nav>  

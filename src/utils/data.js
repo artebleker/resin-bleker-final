@@ -11,7 +11,7 @@ const data = [
     description: "",
     type: "mascotas",
     categoryId: 1,
-    keyWords: "",
+    keyWords: ["gato","collar"],
 
 },
 {
