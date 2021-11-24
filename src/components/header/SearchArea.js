@@ -1,34 +1,45 @@
 import React, {useState} from "react";
-// import ItemDetail from '../details/ItemDetail'
 
-function SearchArea({keywords}) {
-    const [keyword, setKeyword] = React.useState("");
-    const [data, setdata] = React.useState(keywords);
+const {data} = require ('../../utils/data')
+function SearchArea() {
+    const [keyword, setKeyword] = useState("");
+   
 
-    function submitHandler(e) {
-        e.preventDefault();
-        // let filterdata = keywords.filter(
-        //     video => video.title.toLowerCase().includes(keyword.toLowerCase())
-        // );
-        // setdata(filterdata);
+            const submitHandler = (e) => {
+                    e.preventDefault();
+                    for (let i =0; i< data.length; i++){
+                let filtro = data.filter(
+                    keyword => keyword[i].keyWords.includes(keyword)
+                )
+                setKeyword(filtro)
+            }
+            console.log(keyword)
+    }
+
+    const handleChange = (e) => {
+        let prohibido = ["0","1","2","3","4","5","6","7","8","9","!","@","#","$","%","&","/","=","?","¡","¿",",","+","-", " ", '"',"'",".","*"]
+        if (prohibido.includes(e.key)) {
+            console.log("Prohibido:",e.key);
+            e.preventDefault();
+        }
     }
 
         return (
             <div>
                 <form
-                onSubmit={submitHandler}
+              onSubmit={submitHandler}
                 >
                 <label htmlFor="keyword">
                
                 <input
                     id="keyword"
-                    value={keyword}
+                    onKeyDown={handleChange}
                     onChange={(e) => setKeyword(e.target.value)}
                 />
                 </label>
-                <button className="btn border-primary">Buscar</button>
+                <button className="btn border-primary"   >Buscar</button>
             </form>
-            {/* <ItemDetail keyword={keyWords}/>            */}
+          
             </div>
         );
 };

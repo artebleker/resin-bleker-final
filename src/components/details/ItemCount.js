@@ -1,12 +1,12 @@
 
 import React, { useEffect, useState } from 'react'
 
-const ItemCount = ({stock}) => {
+const ItemCount = ({stock, initial, onAdd}) => {
 
     const [count, setCount] = useState(0)
 
     useEffect(()=> {
-        setCount(1)
+        setCount(initial)
     }, [])
 
     const sumar = () => {
@@ -16,7 +16,7 @@ const ItemCount = ({stock}) => {
     }
 
     const restar = () => {
-        if (count > 1) {
+        if (count > initial) {
             setCount (count -1)
         }
     }
@@ -30,7 +30,7 @@ const ItemCount = ({stock}) => {
         </div>
         {
             stock?
-            <button className=" fs-4 btn-primary"> Agregar al carrito</button>
+            <button className=" fs-4 btn-primary" onClick={()=> onAdd(count)}> Agregar al carrito</button>
             :
             <button disabled className=" fs-4 btn-outline-primary"> Agregar al carrito</button>
         }

@@ -1,11 +1,11 @@
 import React from 'react'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
+import { Link } from 'react-router-dom'
 
-
-const Cart = () => {
+const CartWidget = () => {
     let cantCart = 3
     return (
-        <div className="cart">
+       <Link to='/cart'> <div className="cart">
             <a className="nav-link active fs-1 "><AiOutlineShoppingCart /></a>
           {
               cantCart>0 &&
@@ -13,8 +13,8 @@ const Cart = () => {
 
           }
 
-        </div>
+        </div></Link>
     )
 }
 
-export default Cart
+export default CartWidget
