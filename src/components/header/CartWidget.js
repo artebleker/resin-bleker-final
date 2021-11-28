@@ -1,9 +1,11 @@
-import React from 'react'
+import React, {useContext, useEffect } from 'react'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
+import {CartContext } from '../cart/CartContext';
 
 const CartWidget = () => {
-    let cantCart = 3
+    const test= useContext(CartContext)
+const cantCart =test.calcItemsCount()
     return (
        <Link to='/cart'> <div className="cart">
             <a className="nav-link active fs-1 "><AiOutlineShoppingCart /></a>

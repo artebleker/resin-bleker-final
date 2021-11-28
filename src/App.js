@@ -4,11 +4,13 @@ import ItemListContainer from '../src/components/main/ItemListContainer'
 import NavBar from "./components/header/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './style.css'
-import Cart from './components/main/Cart';
+import Cart from './components/cart/Cart';
+import CartContextProvider from "./components/cart/CartContext";
 
 function App() {
   return (
     <>
+    <CartContextProvider>
     <BrowserRouter>
 <NavBar />
 <Routes>
@@ -18,6 +20,7 @@ function App() {
     <Route path='/cart' element={<Cart/>}/>
 </Routes>
 </BrowserRouter>
+</CartContextProvider>
     </>
   );
 }

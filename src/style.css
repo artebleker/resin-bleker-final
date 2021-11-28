@@ -16,7 +16,6 @@ body{
 
 .img {
   width: 300px;
-  /* height: 400px; */
 }
 
 .cart {
@@ -59,4 +58,29 @@ body{
 
 .item-list-container article{
     margin:15px;
+}
+
+.cart-section h1, .cart-section div{
+  margin: 20px 0px;
+}
+.cart-section{
+  padding: 30px 0px;
+}
+
+.cart-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 5px;
+  padding: 15px 15px;
+  background-color: rgba(211, 100, 211, 0.404);
+
+}
+.cart-div img{
+  width: 200px;
+}
+
+.btn{
+  margin:4px;
 }

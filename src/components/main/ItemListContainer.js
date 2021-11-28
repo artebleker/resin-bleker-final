@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import ItemList from './ItemList'
 import { useParams } from 'react-router'
 import customFetch from '../../utils/customFetch'
-const {data} = require ('../../utils/data')
+const {data} = require('../../utils/data').default
 
 const ItemListContainer = () => {
 
@@ -16,7 +16,7 @@ useEffect(()=> {
     }))
     .then(result => setDatos(result))
     .catch(err => console.log (err))
-}, [datos])
+}, [idCategory])
     return (
         <main className="container-fluid">
             <ItemList items= {datos} />

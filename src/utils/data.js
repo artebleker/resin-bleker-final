@@ -1,17 +1,17 @@
 
-
 const data = [
 {
     id: 1,
     name: "Gato",
     photo: 'https://cf.shopee.ph/file/f6df05589eeed80f9f85b99c254858cc',
-    // photo:  '../asset/Mascotas/gato.jpg',
+    // photo: '../asset/Mascotas/gato.jpg',  
     stock: 10,
     price: 600,
     description: "",
     type: "mascotas",
     categoryId: 1,
-    keyWords: ["gato","collar"],
+    // keyWords: ["gato","collar"],
+    keyWords: "gatok",
 
 },
 {
@@ -24,7 +24,7 @@ const data = [
     description: "",
     type: "mascotas",
     categoryId: 1,
-    keyWords: "",
+    keyWords: "perritok",
 
 },
 {
@@ -37,7 +37,7 @@ const data = [
     description: "",
     type: "mascotas",
     categoryId: 1,
-    keyWords: "",
+    keyWords: "perrok",
 
 },
 {
@@ -120,4 +120,5 @@ const data = [
 }
 
 ]
-module.exports = { data };
+// module.exports = { data };
+export default { data };

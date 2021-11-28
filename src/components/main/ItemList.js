@@ -17,7 +17,7 @@ const ItemList = ({items}) => {
             />)
             : 
             <div className="spinner-border"  role="status">
-  <span className="visually-hidden">Loading...</span>
+  <span className="visually-hidden"></span>
 </div>
             // <p>Loading...</p>
             }
