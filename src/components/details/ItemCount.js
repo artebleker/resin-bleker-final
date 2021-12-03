@@ -29,7 +29,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
             <button onClick= {restar}>-</button>
         </div>
         {
-            stock?
+            stock>0?
             <button className=" fs-4 btn-primary" onClick={()=> onAdd(count)}> Agregar al carrito</button>
             :
             <button disabled className=" fs-4 btn-outline-primary"> Agregar al carrito</button>

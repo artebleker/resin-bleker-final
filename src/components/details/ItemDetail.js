@@ -8,7 +8,7 @@ const [itemCount, setItemCount] = useState(0);
 const test = useContext(CartContext);
 
 const onAdd = (count) => {
-    alert(count)
+    alert("Llevas "+count+" "+item.name+"/s")
     setItemCount(count);
     test.addToCart(item, count)
 }
@@ -19,7 +19,6 @@ const onAdd = (count) => {
                 item && item.photo?
                 <div className="container-fluid item-detail">
                 <h1 className="fs-1">{item.name}</h1>
-                {/* <img src={item.photo}></img> */}
                 <img src={item.photo}></img>
                 
                 <section>

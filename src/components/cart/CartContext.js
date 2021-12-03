@@ -17,6 +17,7 @@ const CartContextProvider = ({ children }) => {
         ])
     } else {
         found.countItem += count
+        setCartList([...cartList])
     }
 }
 
@@ -45,10 +46,10 @@ const calcItemsCount =()=>{
     return count.reduce(((previousValue, currentValue)=> previousValue+currentValue),0)
 }
 
-const buy= ()=>{
-    alert('Gracias por su compra!')
-    removeList()
-}
+// const buy= ()=>{
+//     alert('Gracias por su compra!')
+//     removeList()
+// }
 
     return (
         <CartContext.Provider value={{
@@ -62,7 +63,7 @@ const buy= ()=>{
             calcTotal,
             calcDiscount,
             calcItemsCount,
-            buy
+            // buy
         }}>
             { children }
         </CartContext.Provider>

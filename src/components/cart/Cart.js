@@ -1,8 +1,47 @@
 import React, { useContext } from "react";
 import {CartContext} from "../cart/CartContext";
 import { Link } from "react-router-dom";
+import { collection, doc, setDoc, serverTimestamp, updateDoc, increment } from "firebase/firestore";
+import db from '../../utils/firebaseConfig';
 const Cart = () => {
   const test = useContext(CartContext);
+
+  const createOrder = () => {
+    const itemsForDB = test.cartList.map(item => ({
+      id: item.idItem,
+      title: item.nameItem,
+      price: item.costItem
+    }))
+
+    test.cartList.forEach(async (item)=>{
+      const itemRef = doc(db, "data", item.idItem)
+      await updateDoc(itemRef, {
+        stock: increment(-item.countItem)
+      })
+    })
+    let order = {
+      buyer: {
+        name:"Maka Albarn",
+        email: "soul.eater@shinbunsen.com",
+        phone: "4242564"
+      },
+      total: test.calcTotal(),
+      items: itemsForDB,
+      date: serverTimestamp()
+    }
+    console.log(order);
+
+    const createOrderInFirestore = async () => {
+      const newOrderRef = doc(collection(db, "orders"));
+      await setDoc(newOrderRef, order);
+      return newOrderRef;
+    }
+
+createOrderInFirestore()
+.then(result=>alert(`Su compra fue realizada. Orden: ${result.id}`))
+.catch(err=>console.log(err))
+test.removeList()
+  }
 
   return (
     <section className="container cart-section">
@@ -61,7 +100,7 @@ const Cart = () => {
         )}
       </div>
 
-        <Link to='/'><button className="btn btn-success btn-lg" onClick={test.buy} ><b>COMPRAR</b></button></Link>
+        <Link to='/'><button className="btn btn-success btn-lg" onClick={createOrder} ><b>COMPRAR</b></button></Link>
     </article>
 }
     </section>

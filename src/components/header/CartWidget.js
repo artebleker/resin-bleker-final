@@ -1,4 +1,4 @@
-import React, {useContext, useEffect } from 'react'
+import React, {useContext } from 'react' //useEffect
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 import {CartContext } from '../cart/CartContext';

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {memo} from 'react'
 import Item from './Item'
 
 
@@ -16,7 +16,7 @@ const ItemList = ({items}) => {
             stock={item.stock} 
             />)
             : 
-            <div className="spinner-border"  role="status">
+            <div className="spinner-border container-fluid"  role="status">
   <span className="visually-hidden"></span>
 </div>
             // <p>Loading...</p>
@@ -25,4 +25,4 @@ const ItemList = ({items}) => {
     )
 }
 
-export default ItemList
+export default memo(ItemList)
