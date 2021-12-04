@@ -7,8 +7,9 @@ const CartWidget = () => {
     const test= useContext(CartContext)
 const cantCart =test.calcItemsCount()
     return (
-       <Link to='/cart'> <div className="cart">
-            <a className="nav-link active fs-1 "><AiOutlineShoppingCart /></a>
+       <Link to='/cart'> <div className="cart nav-link active">
+           <AiOutlineShoppingCart className=" fs-1 "/>
+            {/* <a className="nav-link active fs-1 "><AiOutlineShoppingCart /></a> */}
           {
               cantCart>0 &&
               <span className="rounded-pill d-inline p-2 bg-primary text-white" >{cantCart}</span>

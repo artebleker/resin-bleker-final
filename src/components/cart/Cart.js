@@ -52,7 +52,7 @@ test.removeList()
               test.cartList.length> 0 &&
                 test.cartList.map(item =>
                     <article className="cart-div container-fluid" key={item.idItem}>
-                            <img src={item.imgItem}></img>
+                            <img src={item.imgItem} alt='imagen'></img>
                                 <h3 title={`Producto: ${item.nameItem}`}> {item.nameItem}</h3>
                         <div>
                             {

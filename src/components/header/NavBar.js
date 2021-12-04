@@ -1,8 +1,9 @@
 import React, {memo} from 'react'
 import { Link } from 'react-router-dom'
 import CartWidget from './CartWidget'
-import sakuraTitulo from "../../asset/sakuraTitulo.png"
+// import sakuraTitulo from "../../asset/sakuraTitulo.png"
 import SearchArea from './SearchArea'
+
 
 const NavBar = () => {
     
@@ -11,7 +12,8 @@ const NavBar = () => {
           <nav className="navbar navbar-expand-lg navbar-light bg-light nav-bar ">
           <div className="container-fluid">
           <Link className="navbar-brand" to='/'>
-             <img src={sakuraTitulo} alt="Sakura Resin" title="Sakura Resin" width="200px"/>
+             {/* <img src={sakuraTitulo} alt="Sakura Resin" title="Sakura Resin" width="200px"/> */}
+             <img src="https://res.cloudinary.com/dgioqusuk/image/upload/v1638579251/sakuraTitulo_ax4bhl.png" alt="Sakura Resin" title="Sakura Resin" width="200px"/>
           </Link>
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <Link className="nav-link active" to='/category/1'>Mascotas</Link> 

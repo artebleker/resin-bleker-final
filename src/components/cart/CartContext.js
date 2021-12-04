@@ -24,7 +24,7 @@ const CartContextProvider = ({ children }) => {
 const removeList = () => setCartList([])
 
 const deleteItem = (id) => {
-    let res = cartList.filter(item => item.idItem != id)
+    let res = cartList.filter(item => item.idItem !== id)
     setCartList(res);
 }
 const calcTotalPerItem = (idItem) => {

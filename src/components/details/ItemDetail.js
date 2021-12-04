@@ -19,7 +19,7 @@ const onAdd = (count) => {
                 item && item.photo?
                 <div className="container-fluid item-detail">
                 <h1 className="fs-1">{item.name}</h1>
-                <img src={item.photo}></img>
+                <img src={item.photo} alt="imagen"></img>
                 
                 <section>
                 <p>{item.description}</p>

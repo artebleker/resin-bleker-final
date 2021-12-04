@@ -8,7 +8,7 @@ const firestoreFetch = async (idCategory) => {
     let q;
   if (idCategory){
 
-       q = query(collection(db, "data"), where('categoryId', '==', 'idCategory'));
+       q = query(collection(db, "data"), where('categoryId', '==', idCategory));
   }else{
    q = query(collection(db, "data"), orderBy("type"));
 }
@@ -16,7 +16,9 @@ const firestoreFetch = async (idCategory) => {
   const dataFromFirestore = querySnapshot.docs.map((document) => ({
     id: document.id,
     ...document.data(),
-  }));
+  })
+ );
+
   return dataFromFirestore;
   // forEach((doc) => {
   //   console.log(`${doc.id} => ${doc.data()}`);
@@ -36,6 +38,6 @@ export const firestoreFetchOne = async (idItem) => {
     }
   } else {
     // doc.data() will be undefined in this case
-    console.log("No such document!");
+    console.log("Not Found");
   }
 }
