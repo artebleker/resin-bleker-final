@@ -1,4 +1,66 @@
-# Getting Started with Create React App
+
+![Logo](https://res.cloudinary.com/dgioqusuk/image/upload/v1638579251/sakuraTitulo_ax4bhl.png)
+
+# 
+
+_Market-place de productos hechos en resina.
+Placas para mascotas, llaveros y articulos. Todos hechos a mano!_
+
+En este sitio se despliega mi conocimiento adquirido en la herramieta React Js. en el año 2021
+
+
+## Vista del proyecto
+
+![vista del sitio](https://res.cloudinary.com/dgioqusuk/image/upload/v1638810426/view-page_ljegte.png)
+
+
+## Deployment
+
+#### Para hacer funcionar el proyecto debe seguir el siguiente instructivo:
+
+1- Abra la terminal y ubiquese dentro de la carpeta que desea trabajar
+
+2- Clone el repositorio introduciendo en la terminal (y luego _ENTER_):
+```bash
+  git clone https://github.com/artebleker/resin-bleker-final.git
+```
+3- Luego debe instalar las dependencias con el siguiente comando:
+```bash
+  npm install
+```
+4- Arme la estructura del proyecto en su disco:
+```bash
+  npm run deploy
+```
+5- Por último corra el programa y disfrute del proyecto:
+```bash
+  npm run deploy
+```
+
+## 🛠 Tecnologías aplicadas en este proyecto
+* React Js
+* JavaScript
+* HTML
+* CSS
+* Adobe Photoshop
+
+## Wiki 📖
+
+Más información sobre la resina poliester [Wiki](https://es.wikipedia.org/wiki/Resina_de_poli%C3%A9ster)
+
+
+## Agradecimiento 🍺
+
+* [@sakuraresin](https://www.instagram.com/sakuraresin/)
+* CoderHouse 
+
+
+## Autor
+### [Julián Bleker](https://www.github.com/artebleker)
+
+
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,4 +130,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# resin-bleker-final
+# resin-bleker-final -->
