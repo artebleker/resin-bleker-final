@@ -1,31 +1,21 @@
-import React, {useState, useEffect} from 'react'
-import { useParams } from 'react-router'
-import ItemDetail from './ItemDetail'
-// import customFetch from '../../utils/customFetch'
-import {firestoreFetchOne} from '../../utils/firestoreFetch'
+// Traer los datos de db (data base) de firestoreFetch para usarlos en ItemDetail
 
-// const {data} = require('../../utils/data').default
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router";
+import ItemDetail from "./ItemDetail";
+import { firestoreFetchOne } from "../../utils/firestoreFetch";
+
 const ItemDetailContainer = () => {
-const [dato, setDato] = useState({})
-const {idItem} = useParams()
+  const [dato, setDato] = useState({});
+  const { idItem } = useParams();
 
-// useEffect(()=> {
-//     customFetch(1000, data.find(item => item.id === parseInt(idItem)))
-//     .then(result => setDato(result))
-//     .catch(err => console.log(err))
-// },[]) //idItem
-
-useEffect(()=>{
+  useEffect(() => {
     firestoreFetchOne(idItem)
-    .then(result=>setDato(result))
-    .catch(err=>console.log(err))
-},[])
+      .then((result) => setDato(result))
+      .catch((err) => console.log(err));
+  }, []);
 
-    return (
-      
-         <ItemDetail item= {dato} />   
-  
-    )
-}
+  return <ItemDetail item={dato} />;
+};
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

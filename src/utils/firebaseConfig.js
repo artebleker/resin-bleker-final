@@ -1,3 +1,4 @@
+// Trae la base de datos (db) de firebase, se exporta hacia firestoreFetch
 
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
@@ -8,8 +9,8 @@ const firebaseConfig = {
   projectId: "resin-bleker-final",
   storageBucket: "resin-bleker-final.appspot.com",
   messagingSenderId: "999499653535",
-  appId: "1:999499653535:web:0cf170de4039b115265daa"
+  appId: "1:999499653535:web:0cf170de4039b115265daa",
 };
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-export default db
+export default db;

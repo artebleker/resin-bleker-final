@@ -1,23 +1,12 @@
+// Toma los datos de firestoreFetch para armar los detalles del item seleccionado
+
 import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router";
-// import customFetch from '../../utils/customFetch'
-// const {data} = require('../../utils/data').default
 import firestoreFetch from "../../utils/firestoreFetch";
 const ItemListContainer = () => {
   const [datos, setDatos] = useState([]);
   const { idCategory } = useParams();
-
-  // CUSTOM FETCH
-  // useEffect(()=> {
-  //     customFetch(2000, data.filter(item => {
-  //         if (idCategory === undefined)
-  //             return item
-  //             return item.categoryId === parseInt(idCategory)
-  //     }))
-  //     .then(result => setDatos(result))
-  //     .catch(err => console.log (err))
-  // }, [idCategory])
 
   useEffect(() => {
     firestoreFetch(idCategory)
