@@ -16,7 +16,7 @@ En este sitio se despliega mi conocimiento adquirido en la herramieta React Js. 
 
 ## Deployment
 
-#### Para hacer funcionar el proyecto debe seguir el siguiente instructivo:
+#### Para clonar y correr el proyecto debe seguir el siguiente instructivo:
 
 1- Abra la terminal y ubiquese dentro de la carpeta que desea trabajar
 
@@ -28,13 +28,17 @@ En este sitio se despliega mi conocimiento adquirido en la herramieta React Js. 
 ```bash
   npm install
 ```
-4- Arme la estructura del proyecto en su disco:
+4- (Opcional) Arme la estructura del proyecto en su disco:
+```bash
+  npm run build
+```
+5- (Opcional) Desplegar el proyecto:
 ```bash
   npm run deploy
 ```
-5- Por último corra el programa y disfrute del proyecto:
+6- Por último para correr el proyecto:
 ```bash
-  npm run deploy
+  npm start
 ```
 
 ## 🛠 Tecnologías aplicadas en este proyecto
