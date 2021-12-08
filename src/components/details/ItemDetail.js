@@ -21,15 +21,15 @@ const ItemDetail = ({ item }) => {
           <h1 className="fs-1">{item.name}</h1>
           <img src={item.photo} alt="imagen"></img>
 
-          <section>
-            <p>{item.description}</p>
-            <p>$ {item.price}</p>
-            <p>Stock {item.stock}</p>
+          <section className="container-fluid">
+            <p className="container-fluid">{item.description}</p>
+            <h2 className="fs-2">$ {item.price}</h2>
+            <p className="fs-4">Stock {item.stock}</p>
             {itemCount === 0 ? (
               <ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd} />
             ) : (
               <Link to="/cart">
-                <button>Ir al carrito</button>
+                <button className="btn-lg fs-4 btn-warning">Ir al carrito</button>
               </Link>
             )}
           </section>

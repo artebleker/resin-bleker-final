@@ -46,7 +46,11 @@ body{
     font-size: 1.5rem;
 }
 .item-detail img{
-    width: 600px;
+    width: 400px;
+    margin: 1px 0px;
+}
+.item-detail p{
+  margin:15px;
 }
 .item-list-container{
     display: flex;

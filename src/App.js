@@ -6,11 +6,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './style.css'
 import Cart from './components/cart/Cart';
 import CartContextProvider from "./components/cart/CartContext";
+// import SearchAreaContext from './components/header/SearchArea';
+
 
 function App() {
   return (
     <>
     <CartContextProvider>
+    {/* <SearchAreaContext> */}
     <BrowserRouter>
 <NavBar />
 <Routes>
@@ -20,6 +23,7 @@ function App() {
     <Route path='/cart' element={<Cart/>}/>
 </Routes>
 </BrowserRouter>
+{/* </SearchAreaContext> */}
 </CartContextProvider>
     </>
   );

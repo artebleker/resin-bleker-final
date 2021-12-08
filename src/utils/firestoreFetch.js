@@ -11,9 +11,13 @@ import { doc, getDoc } from "firebase/firestore";
 import db from "./firebaseConfig";
 const firestoreFetch = async (idCategory) => {
   let q;
-  let keywordContext="";
-if(keywordContext){
-   q = query(collection(db, "data"), where("keyWords", "array-contains", keywordContext))
+//   let keywordContext="";
+// if(keywordContext){
+//    q = query(collection(db, "data"), where("keyWords", "array-contains", keywordContext))
+ 
+if(Array.isArray(idCategory)){
+   q = query(collection(db, "data"), where("keyWords", "array-contains", idCategory))
+   
 }else{
 
   if (idCategory) 
