@@ -1,13 +1,18 @@
 // Renderiza el buscador de palabras claves
 
-import React, { useState } from "react"; //createContext
-// export const SearchAreaContext = createContext();
+import React, { useState, useContext } from "react";
+import { SearchAreaContext } from "./SearchAreaContext";
+
+
 function SearchArea() {
+  const test=useContext(SearchAreaContext)
   const [keyword, setKeyword] = useState("");
   const submitHandler = (e) => {
     e.preventDefault();
     setKeyword(e.target.value);
+    test.setQToSearch(keyword)
     console.log(keyword);
+  
    };
 
   // Funcion para prohibir cualquier tecla que No sea del alfabeto
@@ -20,22 +25,21 @@ function SearchArea() {
   //   }
   //   setKeyword(e.target.value);
   // };
-
+ 
   return (
-    // <SearchAreaContext.Provider value={submitHandler}>
       <div>
         <form onSubmit={submitHandler}>
           <label htmlFor="keyword">
             <input
               id="keyword"
               // onKeyDown={handleChange}
-              onChange={(e) => setKeyword(e.target.value)}
+              onChange={(e) => setKeyword(e.target.value)} 
             />
           </label>
-          <button className="btn border-primary">Buscar</button>
+          <button className="btn border-primary" 
+          onClick={()=> document.getElementById("keyword").value=null}>Buscar</button>
         </form>
       </div>
-    // </SearchAreaContext.Provider>
   );
 }
 export default SearchArea;

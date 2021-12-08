@@ -9,28 +9,24 @@ import {
 } from "@firebase/firestore";
 import { doc, getDoc } from "firebase/firestore";
 import db from "./firebaseConfig";
-const firestoreFetch = async (idCategory) => {
-  let q;
-//   let keywordContext="";
-// if(keywordContext){
-//    q = query(collection(db, "data"), where("keyWords", "array-contains", keywordContext))
- 
-if(Array.isArray(idCategory)){
-   q = query(collection(db, "data"), where("keyWords", "array-contains", idCategory))
-   
-}else{
 
-  if (idCategory) 
-    q = query(collection(db, "data"), where("categoryId", "==", idCategory));
-   else 
-    q = query(collection(db, "data"), orderBy("type"));
-  }
+const firestoreFetch = async (resolve, testOrId) => {
+  let q;
+  if (resolve && testOrId === 1)
+    q = query(
+      collection(db, "data"),
+      where("keyWords", "array-contains", resolve)
+    );
+  else if (resolve && testOrId === 0)
+    q = query(collection(db, "data"), where("categoryId", "==", resolve));
+  else q = query(collection(db, "data"), orderBy("type"));
+
   const querySnapshot = await getDocs(q);
   const dataFromFirestore = querySnapshot.docs.map((document) => ({
     id: document.id,
     ...document.data(),
   }));
-return dataFromFirestore;
+  return dataFromFirestore;
 };
 export default firestoreFetch;
 export const firestoreFetchOne = async (idItem) => {

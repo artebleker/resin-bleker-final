@@ -57,7 +57,7 @@ const Cart = () => {
       <h1>Lista de compras</h1>
 
       <div>
-        {test.cartList.length > 0 &&
+        {test.cartList.length > 0 ?
           test.cartList.map((item) => (
             <article className="cart-div container-fluid" key={item.idItem}>
               <img src={item.imgItem} alt="imagen"></img>
@@ -79,7 +79,7 @@ const Cart = () => {
                 X
               </button>
             </article>
-          ))}
+          )):<p className="fs-4">No hay nada en el carrito</p>}
       </div>
       {test.cartList.length > 0 && (
         <article>
@@ -106,13 +106,10 @@ const Cart = () => {
             <Link to="/resin-bleker-final">
               <button className="btn btn-primary">Seguir comprando</button>
             </Link>
-            {test.cartList.length > 0 ? (
-              <button className="btn btn-danger" onClick={test.removeList}>
-                Borrar lista de compras
-              </button>
-            ) : (
-              <p>No hay nada en el carrito</p>
-            )}
+
+            <button className="btn btn-danger" onClick={test.removeList}>
+              Borrar lista de compras
+            </button>
           </div>
 
           <Link to="/resin-bleker-final">

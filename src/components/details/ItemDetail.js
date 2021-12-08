@@ -29,7 +29,9 @@ const ItemDetail = ({ item }) => {
               <ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd} />
             ) : (
               <Link to="/cart">
-                <button className="btn-lg fs-4 btn-warning">Ir al carrito</button>
+                <button className="btn-lg fs-4 btn-warning">
+                  Ir al carrito
+                </button>
               </Link>
             )}
           </section>
