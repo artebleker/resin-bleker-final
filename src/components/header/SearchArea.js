@@ -1,7 +1,8 @@
 // Renderiza el buscador de palabras claves
 
-import React, { useState } from "react";
+import React, { useState, createContext } from "react";
 
+export const searchArea = createContext()
 
 function SearchArea() {
   const [keyword, setKeyword] = useState("");
