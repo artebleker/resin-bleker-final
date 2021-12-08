@@ -9,12 +9,9 @@ import {
 } from "@firebase/firestore";
 import { doc, getDoc } from "firebase/firestore";
 import db from "./firebaseConfig";
-const {keyword} = require("../components/header/SearchArea")
-
-
 const firestoreFetch = async (idCategory) => {
   let q;
-  let keywordContext=keyword;
+  let keywordContext="";
 if(keywordContext){
    q = query(collection(db, "data"), where("keyWords", "array-contains", keywordContext))
 }else{
@@ -29,13 +26,9 @@ if(keywordContext){
     id: document.id,
     ...document.data(),
   }));
-
 return dataFromFirestore;
-
 };
-
 export default firestoreFetch;
-
 export const firestoreFetchOne = async (idItem) => {
   const docRef = doc(db, "data", idItem);
   const docSnap = await getDoc(docRef);

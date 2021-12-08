@@ -14,11 +14,11 @@ const ItemListContainer = () => {
       .catch((err) => console.log(err));
   }, [idCategory]);
 
-  useEffect(() => {
-    return () => {
-      setDatos([]);
-    };
-  }, []);
+  // useEffect(() => {
+  //   return () => {
+  //     setDatos([]);
+  //   };
+  // }, []);
 
   return (
     <main className="container-fluid">
